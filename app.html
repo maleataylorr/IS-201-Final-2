@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke Generator</title>
+
+    <style>
+        .spin {
+    animation: spinOnce 0.6s ease;
+}
+
+@keyframes spinOnce {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffe29f, #ffa99f);
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .joke {
+            font-size: 20px;
+            margin: 20px 0;
+            min-height: 60px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #ff6f61;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #e85a4f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>😂 Joke Generator</h1>
+
+        <div class="joke" id="jokeBox">
+            Click the button to get a joke!
+        </div>
+
+        <button onclick="newJoke()">Get Joke</button>
+        <button onclick="clearJoke()">Clear</button>
+    </div>
+
+    <script>
+        const jokes = [
+            "Why don’t scientists trust atoms? Because they make up everything!",
+            "Why did the math book look sad? It had too many problems.",
+            "What do you call fake spaghetti? An impasta!",
+            "Why can’t your nose be 12 inches long? Because then it would be a foot!",
+            "Why did the student eat his homework? Because the teacher said it was a piece of cake!",
+            "I told my computer I needed a break, and now it won’t stop sending me Kit-Kats."
+        ];
+
+        function newJoke() {
+    let box = document.getElementById("jokeBox");
+
+    // remove animation so it can restart
+    box.classList.remove("spin");
+
+    // force browser to reset animation
+    void box.offsetWidth;
+
+    // add spin animation
+    box.classList.add("spin");
+
+    // change joke
+    let randomIndex = Math.floor(Math.random() * jokes.length);
+    box.innerText = jokes[randomIndex];
+}
+
+        function clearJoke() {
+            document.getElementById("jokeBox").innerText = "Click the button to get a joke!";
+        }
+    </script>
+
+</body>
+</html>

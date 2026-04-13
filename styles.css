@@ -1,0 +1,36 @@
+body{
+    background-color: lightblue;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-align: left;
+}
+
+.common{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+
+.pink{
+    background-color: pink;
+font-weight: bold;
+}
+
+.blue{
+    background-color: white;
+    font-weight: bold;
+}
+
+.green{
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+#top{text-align: center;}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
